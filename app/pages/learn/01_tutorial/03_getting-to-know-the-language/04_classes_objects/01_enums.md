@@ -138,11 +138,11 @@ i.e. in the order of occurrence of the enum constant.
 This allows for comparing instances of enums as well as sorting or searching.
 
 ```java
-public void compareDayOfWeek(DayOfWeek dayOfWeek){
+public void compareDayOfWeek(DayOfWeek dayOfWeek) {
     int comparison = dayOfWeek.compareTo(DayOfWeek.WEDNESDAY);
-    if ( comparison < 0) {
+    if (comparison < 0) {
         System.out.println("It's before the middle of the work week.");
-    } else if(comparison > 0){
+    } else if (comparison > 0) {
         System.out.println("It's after the middle of the work week.");
     } else {
         System.out.println("It's the middle of the work week.");

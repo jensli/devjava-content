@@ -33,7 +33,7 @@ In this tutorial we'll focus on simple loops.
 Let's start with the traditional for loop where we perform an action for values of an index over a range.
 
 ```java
-for(int i = 0; i < 5; i++) {
+for (int i = 0; i < 5; i++) {
   System.out.println(i);
 }
 ```
@@ -65,7 +65,7 @@ The functional style code is more concise, easier to read, and the intention is 
 What if your `for` loop runs to include the ending value, like in the following code, you may wonder.
 
 ```java
-for(int i = 0; i <= 5; i++) {
+for (int i = 0; i <= 5; i++) {
   System.out.println(i);
 }
 ```

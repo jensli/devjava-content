@@ -32,7 +32,7 @@ Here's an example of iteration, using the `foreach`, over a collection of names:
 ```java
 List<String> names = List.of("Jack", "Paula", "Kate", "Peter");
   
-for(String name: names) {
+for (String name : names) {
   System.out.println(name);
 }
 ```
@@ -67,8 +67,8 @@ Suppose, in the middle of the iteration, we want to pick some values from the co
 ```java
 List<String> names = List.of("Jack", "Paula", "Kate", "Peter");
   
-for(String name: names) {
-  if(name.length() == 4) {
+for (String name : names) {
+  if (name.length() == 4) {
     System.out.println(name);
   }
 }

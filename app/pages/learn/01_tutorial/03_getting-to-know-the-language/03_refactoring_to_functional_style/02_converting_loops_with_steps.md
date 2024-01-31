@@ -30,7 +30,7 @@ When looping over a range of values, one at a time, the `range()` method of `Int
 Here's a loop that uses step to skip a few values in the desired range:
 
 ```java
-for(int i = 0; i < 15; i = i + 3) {
+for (int i = 0; i < 15; i = i + 3) {
   System.out.println(i);
 }
 ```
@@ -40,9 +40,9 @@ The value of the index variable `i` starts at `0` and then is incremented by `3`
 Before we refactor the code, let's take a closer look at the `for()` loop in the previous code, but with a pair of imaginary glasses that let us look at potential uses for lambdas.
 
 ```java
-//imaginary code
-for(int i = 0; i < 15; i = i + 3) //imperative
-for(seed, i -> i < 15, i -> i + 3) //functional
+// Imaginary code
+for (int i = 0; i < 15; i = i + 3) // Imperative
+for (seed, i -> i < 15, i -> i + 3) // Functional
 ```
 
 The first argument passed to the `for` loop is the starting value or the seed for the iteration and it can stay as is. The second argument is a predicate that tells the value of the index variable, `i`, should not exceed the value of `15`. We can replace that in the functional style with a `IntPredicate`. The third argument is incrementing the value of the index variable and that, in functional style, is simply a `IntUnaryOperator`. The `IntStream` interface has a `static` method named `iterate()` that nicely represents the imaginary code: `iterate(int seed, IntPredicate hasNext, IntUnaryOperator next)`.
@@ -67,8 +67,8 @@ In addition to stepping over values, we often use an unbounded loop and that thr
 Let's take a look at the following imperative style loop which, in addition to the step, is unbounded and uses the `break` statement.
 
 ```java
-for(int i = 0;; i = i + 3) {
-  if(i > 20) {
+for (int i = 0;; i = i + 3) {
+  if (i > 20) {
     break;
   }
 

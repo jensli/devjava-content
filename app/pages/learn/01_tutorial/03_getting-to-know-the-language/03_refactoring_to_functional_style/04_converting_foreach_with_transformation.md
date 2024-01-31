@@ -33,7 +33,7 @@ Here's an example of an iteration, using the `foreach`, that transforms to upper
 ```java
 List<String> names = List.of("Jack", "Paula", "Kate", "Peter");
   
-for(String name: names) {
+for (String name : names) {
   System.out.println(name.toUpperCase());
 }
 ```
@@ -53,7 +53,7 @@ Before refactoring the imperative style code above to the function style, we sho
 ```java
 List<String> names = List.of("Jack", "Paula", "Kate", "Peter");
   
-for(String name: names) {
+for (String name : names) {
   String nameInUpperCase = name.toUpperCase();
   System.out.println(nameInUpperCase);
 }
@@ -90,8 +90,8 @@ Suppose, in the middle of the iteration, we want to pick some values from the co
 ```java
 List<String> names = List.of("Jack", "Paula", "Kate", "Peter");
   
-for(String name: names) {
-  if(name.length() == 4) {
+for (String name : names) {
+  if (name.length() == 4) {
     System.out.println(name.toUpperCase());
   }
 }
