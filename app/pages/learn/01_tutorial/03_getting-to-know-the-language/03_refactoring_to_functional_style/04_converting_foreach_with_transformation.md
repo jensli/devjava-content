@@ -28,7 +28,7 @@ Anytime we are transforming data in an imperative style loop, we can use the `ma
 <a id="imperativetofunctional">&nbsp;</a>
 ## From Imperative to Functional Style
 
-Here's an example of an iteration, using the `foreach`, that transforms to uppercase a collection of names:
+Here's an example of an iteration, using the for-each, that transforms to uppercase a collection of names:
 
 ```java
 List<String> names = List.of("Jack", "Paula", "Kate", "Peter");
@@ -38,7 +38,7 @@ for (String name : names) {
 }
 ```
 
-Each step through the iteration, the `name` variable is bound to a new value. As the iteration advances from one element to the next in the given collection, each name is transformed to uppercase using the `toUpperCase()` function and the resulting value is printed. We have already seen, in the previous article, how to convert the imperative style `foreach` to the functional style&mdash;using the `stream()` internal iteration. If we merely apply what we have seen before, the resulting functional style code would be rather unwieldy, with the lambda passed to `forEach` performing both transformation and printing, like so:
+Each step through the iteration, the `name` variable is bound to a new value. As the iteration advances from one element to the next in the given collection, each name is transformed to uppercase using the `toUpperCase()` function and the resulting value is printed. We have already seen, in the previous article, how to convert the imperative style for-each to the functional style&mdash;using the `stream()` internal iteration. If we merely apply what we have seen before, the resulting functional style code would be rather unwieldy, with the lambda passed to `forEach` performing both transformation and printing, like so:
 
 ```java
 List<String> names = List.of("Jack", "Paula", "Kate", "Peter");

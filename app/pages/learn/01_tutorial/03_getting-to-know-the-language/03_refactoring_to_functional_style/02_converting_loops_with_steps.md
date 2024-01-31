@@ -37,7 +37,7 @@ for (int i = 0; i < 15; i = i + 3) {
 
 The value of the index variable `i` starts at `0` and then is incremented by `3` as the iteration moves forward. When you find yourself looking at a loop like that where the iteration is not over every single value in a range, but some values are skipped, consider using the `iterate()` method of `IntStream`.
 
-Before we refactor the code, let's take a closer look at the `for()` loop in the previous code, but with a pair of imaginary glasses that let us look at potential uses for lambdas.
+Before we refactor the code, let's take a closer look at the `for` loop in the previous code, but with a pair of imaginary glasses that let us look at potential uses for lambdas.
 
 ```java
 // Imaginary code

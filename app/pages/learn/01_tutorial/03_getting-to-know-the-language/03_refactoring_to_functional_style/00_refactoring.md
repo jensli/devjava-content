@@ -19,8 +19,8 @@ In this series we cover the following conversions from the imperative to the fun
 
 | Tutorial                                             |Imperative Style | Functional Style Equivalent  |
 |------------------------------------------------------|-----------------|------------------------------|
-| [Converting Simple Loops](id:refactoring.simple.loops) | `for()`           | `range()` or `rangeClosed()` |
-| [Converting Loops with Steps](id:refactoring.loops.withsteps) | `for(...i = i + ...)` | `iterate()` with `takeWhile()` |
-| [Converting foreach with if](id:refactoring.foreach.withif) | `foreach(...) { if... }` | `stream()` with `filter()` |
-| [Converting Iteration with transformation](id:refactoring.iteration.withtransformation) | `foreach(...) { ...transformation... }` | `stream()` with `map()` |
+| [Converting Simple Loops](id:refactoring.simple.loops) | `for (---)`           | `range()` or `rangeClosed()` |
+| [Converting Loops with Steps](id:refactoring.loops.withsteps) | `for (...i = i + ...)` | `iterate()` with `takeWhile()` |
+| [Converting for-each with if](id:refactoring.foreach.withif) | `for (...) { if... }` | `stream()` with `filter()` |
+| [Converting Iteration with transformation](id:refactoring.iteration.withtransformation) | `for (...) { ...transformation... }` | `stream()` with `map()` |
 

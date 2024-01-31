@@ -20,14 +20,14 @@ author: ["VenkatSubramaniam"]
 <a id="foreach">&nbsp;</a>
 ## Iterating with foreach
 
-In the previous articles in this [tutorial series](id:refactoring) we looked at converting loops written in the imperative style to the functional style. In this article we'll see how to convert an imperative style iteration using `foreach` to the functional style. In addition, we'll also see how to pick select elements using `if` transforms to the functional style.
+In the previous articles in this [tutorial series](id:refactoring) we looked at converting loops written in the imperative style to the functional style. In this article we'll see how to convert an imperative style iteration using for-each to the functional style. In addition, we'll also see how to pick select elements using `if` transforms to the functional style.
 
-Java 5 introduced the very popular `foreach` syntax. For example, to iterate over a collection of `String`s representing names, we'd write something like `for(String name: names)`. Under the hood, the `foreach` is converted, at the bytecode level, to use an `Iterator`&mdash;while the iterator tells us there is another element, fetch the next element for processing. In other words, the `foreach` is a nice concise syntax sugar for iteration with a `while` loop over the elements provided by an `Iterator`. We can convert a `foreach` into the functional style quite easily. Let's see how.
+Java 5 introduced the very popular for-each syntax. For example, to iterate over a collection of `String`s representing names, we'd write something like `for (String name : names)`. Under the hood, the for-each is converted, at the bytecode level, to use an `Iterator`&mdash;while the iterator tells us there is another element, fetch the next element for processing. In other words, the for-each is a nice concise syntax sugar for iteration with a `while` loop over the elements provided by an `Iterator`. We can convert a for-each into the functional style quite easily. Let's see how.
 
 <a id="imperativetofunctional">&nbsp;</a>
 ## From Imperative to Functional Style
 
-Here's an example of iteration, using the `foreach`, over a collection of names:
+Here's an example of iteration, using the for-each, over a collection of names:
 
 ```java
 List<String> names = List.of("Jack", "Paula", "Kate", "Peter");
@@ -37,7 +37,7 @@ for (String name : names) {
 }
 ```
 
-Each step through the iteration, the `name` variable is bound to a new value, as the iteration advances from one element to the next in the given collection. Converting the imperative style `foreach` to the functional style is a straight up use of the `forEach` internal iterator method. It is called an internal iterator because the advancing to the next element is handled internally and automatically instead of externally or explicitly.
+Each step through the iteration, the `name` variable is bound to a new value, as the iteration advances from one element to the next in the given collection. Converting the imperative style for-each to the functional style is a straight up use of the `forEach` internal iterator method. It is called an internal iterator because the advancing to the next element is handled internally and automatically instead of externally or explicitly.
 
 Let's refactor the loop to use functional style.
 
@@ -88,10 +88,10 @@ names.stream()
 
 The `filter()` method acts like a gate, it opens to let some elements pass through and closes to reject or discard some elements, as the iteration moves forward.
 
-We saw in the previous articles the functional style equivalent for the traditional `for` loops. In this article we saw how the imperative style `foreach` of Java 5 transforms into an elegant syntax in the functional style. Furthermore, the `if` condition within a loop of the imperative style translates to a call to the `filter()` method of the `Stream` API.
+We saw in the previous articles the functional style equivalent for the traditional `for` loops. In this article we saw how the imperative style for-each of Java 5 transforms into an elegant syntax in the functional style. Furthermore, the `if` condition within a loop of the imperative style translates to a call to the `filter()` method of the `Stream` API.
 
 <a id="mappings">&nbsp;</a>
 ## Mappings
 
-Anywhere you see a `foreach` loop, use the `forEach()` method directly on the collection. If the body of the `foreach` has a `if` statement to selectively pick some value, then use the `stream()` API with the call to the `filter()` method.
+Anywhere you see a for-each loop, use the `forEach()` method directly on the collection. If the body of the for-each has a `if` statement to selectively pick some value, then use the `stream()` API with the call to the `filter()` method.
 
